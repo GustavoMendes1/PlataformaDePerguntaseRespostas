@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
+const perguntaModel = require("./database/Pergunta");
 
 connection.authenticate().then(()=>{
     console.log('Conexão OK');
@@ -12,7 +13,6 @@ connection.authenticate().then(()=>{
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 

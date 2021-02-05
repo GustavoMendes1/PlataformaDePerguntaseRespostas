@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
 const Pergunta = require("./database/Pergunta");
+const Resposta = require("./database/Respostas");
 
 connection.authenticate().then(()=>{
     console.log('Conexão OK');
